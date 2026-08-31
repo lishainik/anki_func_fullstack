@@ -44,13 +44,13 @@ def print_statistics(score: int, total_time: float):
     """
     if score > 0:
         average_time = total_time / score
-        average_time_message = f'{average_time: 2f} сек.'
+        average_time_message = f'{average_time:.2f} сек.'
     else:
         average_time_message = '-'
 
     print(
         f'Ваш итоговый счет: {score}\n'
-        f'Время игры: {total_time: 2f} секунд'
+        f'Время игры: {total_time:.2f} секунд'
         f'(среднее время: {average_time_message}\n)'
     )
 
@@ -150,7 +150,7 @@ def train_until_mistake(words: Dict[str, str]):
     аргументы -
     words: словарь
     """
-    print('Режим: до первой ошибки')
+    print('Режим: Игра до первой ошибки! Чтобы выйти вручную, введите СТОП')
     play_game(words, stop_on_mistake=True)
 
 
@@ -253,7 +253,7 @@ def main():
             print('До скорой встречи!')
             sys.exit()
         else:
-            print('Неизвестный пункт Меню')
+            print('Неизвестный пункт меню')
 
 
 if __name__ == '__main__':
