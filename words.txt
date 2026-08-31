@@ -1,0 +1,6 @@
+дом, house
+собака, dog
+кошка, cat
+книга, book
+машина, car
+перо, feather
