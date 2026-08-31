@@ -18,21 +18,20 @@ def load_words(filename: str = 'words.txt') -> Dict[str, str]:
     dictionary = {}
     try:
         with open(filename, 'r', encoding='utf-8') as file:
-             for line in file:
-                  line = line.strip()
-                  if not line:
-                       continue
-                  parts = line.split(',')
-                  if len(parts) !=2:
-                       continue
-                  key, value = parts[0].strip(), parts[1].strip()
-                  dictionary[key] = value
+            for line in file:
+                line = line.strip()
+                if not line:
+                    continue
+                parts = line.split(',')
+                if len(parts) != 2:
+                    continue
+                key, value = parts[0].strip(), parts[1].strip()
+                dictionary[key] = value
     except FileNotFoundError:
         print(f'Файл {filename} не найден')
         sys.exit(1)
 
-    return dictionary 
-    
+    return dictionary
 
 
 def print_statistics(score: int, total_time: float):
@@ -46,14 +45,14 @@ def print_statistics(score: int, total_time: float):
     if score > 0:
         average_time = total_time / score
         average_time_message = f'{average_time: 2f} сек.'
-    else: average_time_message = '-'
+    else:
+        average_time_message = '-'
 
-    print (
+    print(
         f'Ваш итоговый счет: {score}\n'
         f'Время игры: {total_time: 2f} секунд'
         f'(среднее время: {average_time_message}\n)'
     )
-
 
 
 def ask_and_check(word: str, correct: str) -> Tuple[bool, bool, float]:
@@ -85,22 +84,21 @@ def ask_and_check(word: str, correct: str) -> Tuple[bool, bool, float]:
     is_correct = answer.strip().lower() == correct.strip().lower()
 
     return False, is_correct, answer_time
-    
 
 
 def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
     """
        запуски игрового цикла
-   
+
        аргументы - 
        words: словарь слов и переводов
        stop_on_mistake: активирован ли режим "тренироваться до первой ошибки"
     """
-    if not words: 
+    if not words:
         print('Словарь пуст - добавьте слова, чтобы начать игру.')
         return
     total_time = 0
-    score = 0 
+    score = 0
     answer_count = 0
 
     key_list = list(words.keys())
@@ -116,16 +114,16 @@ def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
             )
 
             if is_stop:
-                if stop_on_mistake: 
+                if stop_on_mistake:
                     print('Выход из игры по запросу пользователя.')
                 print_statistics(score, total_time)
                 return
 
             total_time += answer_time
-            answer_count +=1
+            answer_count += 1
 
             if is_correct:
-                score +=1
+                score += 1
                 print(f'Верно! Время ответа: {answer_time:.2f} секунд.')
             else:
                 print(f'Ошибка! Неверно! Правильный ответ: {correct_answer}')
@@ -133,6 +131,7 @@ def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
 
             if stop_on_mistake:
                 return
+
 
 def start_game(words: Dict[str, str]):
     """
@@ -190,10 +189,11 @@ def add_words(words: Dict[str, str]):
 
         words[input_word.strip()] = input_translation.strip()
 
+
 def show_all_words(words: Dict[str, str]):
     """
     Показывает все пары слов и переводов, сохраненных в словаре
-    
+
     аргументы -
     words :
     словарь
@@ -205,10 +205,10 @@ def show_all_words(words: Dict[str, str]):
     print('; '.join(all_words))
 
 
-def save_words(words: dict[str, str], filename = 'words.txt'):
+def save_words(words: dict[str, str], filename='words.txt'):
     """
         Сохраняет слова в текстовый файл словаря
-        
+
             аргументы -
             words :
             словарь
@@ -223,7 +223,6 @@ def save_words(words: dict[str, str], filename = 'words.txt'):
 
     except Exception as e:
         print(f'Ошибка при сохранении пары слов: {e}')
-    
 
 
 def main():
@@ -256,8 +255,7 @@ def main():
             sys.exit()
         else:
             print('Неизвестный пункт Меню')
-      
+
 
 if __name__ == '__main__':
     main()
-
