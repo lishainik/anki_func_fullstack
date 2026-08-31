@@ -51,7 +51,7 @@ def print_statistics(score: int, total_time: float):
     print(
         f'Ваш итоговый счет: {score}\n'
         f'Время игры: {total_time:.2f} секунд'
-        f'(среднее время: {average_time_message}\n)'
+        f'(среднее время: {average_time_message})\n'
     )
 
 
@@ -125,7 +125,7 @@ def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
                 score += 1
                 print(f'Верно! Время ответа: {answer_time:.2f} секунд.')
             else:
-                print(f'Ошибка! Неверно! Правильный ответ: {correct_answer}')
+                print(f'Ошибка! Неверно. Правильный ответ: {correct_answer}')
                 print_statistics(score, total_time)
 
             if stop_on_mistake:
