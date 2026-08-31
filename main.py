@@ -87,12 +87,11 @@ def ask_and_check(word: str, correct: str) -> Tuple[bool, bool, float]:
 
 
 def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
-    """
-       запуски игрового цикла
+    """запуски игрового цикла
 
-       аргументы -
-       words: словарь слов и переводов
-       stop_on_mistake: активирован ли режим "тренироваться до первой ошибки"
+    аргументы -
+    words: словарь слов и переводов
+    stop_on_mistake: активирован ли режим "тренироваться до первой ошибки"
     """
     if not words:
         print('Словарь пуст - добавьте слова, чтобы начать игру.')
@@ -207,7 +206,7 @@ def show_all_words(words: Dict[str, str]):
 
 def save_words(words: dict[str, str], filename='words.txt'):
     """
-        Сохраняет слова в текстовый файл словаря
+    Сохраняет слова в текстовый файл словаря
 
             аргументы -
             words :
