@@ -50,7 +50,7 @@ def print_statistics(score: int, total_time: float):
 
     print(
         f'Ваш итоговый счет: {score}\n'
-        f'Время игры: {total_time:.2f} секунд'
+        f'Время игры: {total_time:.2f} секунд '
         f'(среднее время: {average_time_message})\n'
     )
 
