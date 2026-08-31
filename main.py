@@ -36,9 +36,9 @@ def load_words(filename: str = 'words.txt') -> Dict[str, str]:
 
 def print_statistics(score: int, total_time: float):
     """
-    Выводит статистику 
+    Выводит статистику
 
-    аргументы - 
+    аргументы -
     score - счет, количество правильных ответов
     total_time - время игры в секундах
     """
@@ -59,7 +59,7 @@ def ask_and_check(word: str, correct: str) -> Tuple[bool, bool, float]:
     """
     Запрашивает перевод и проверяет правльность ответа
 
-    Аргументы - 
+    Аргументы -
     word - слово, которое нужно перевести
     correct: правильный перевод слова
 
@@ -90,7 +90,7 @@ def play_game(words: Dict[str, str], stop_on_mistake: bool = False):
     """
        запуски игрового цикла
 
-       аргументы - 
+       аргументы -
        words: словарь слов и переводов
        stop_on_mistake: активирован ли режим "тренироваться до первой ошибки"
     """
@@ -137,8 +137,8 @@ def start_game(words: Dict[str, str]):
     """
     запускает игру
 
-    аргументы - 
-    words: словарь 
+    аргументы -
+    words: словарь
     """
     print('Начинаем игру! Чтобы закончить, введите: СТОП')
     play_game(words)
@@ -148,7 +148,7 @@ def train_until_mistake(words: Dict[str, str]):
     """
     запускает режим тренировки до первой ошибки
 
-    аргументы - 
+    аргументы -
     words: словарь
     """
     print('Режим: до первой ошибки')
@@ -212,7 +212,7 @@ def save_words(words: dict[str, str], filename='words.txt'):
             аргументы -
             words :
             словарь
-            filename: 
+            filename:
             путь до файла со словарем
     """
     try:
